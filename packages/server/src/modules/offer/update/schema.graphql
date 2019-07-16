@@ -1,0 +1,13 @@
+input UpdateOfferInput {
+  title: String
+  picture: Upload
+  pictureUrl: String
+  category: String
+  description: String
+  latitude: Float
+  longitude: Float
+}
+
+type Mutation {
+  updateOffer(offerId: String!, input: UpdateOfferInput!): Boolean!
+}
