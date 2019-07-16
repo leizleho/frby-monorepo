@@ -1,0 +1,14 @@
+type Offer {
+  id: ID!
+  title: String!
+  description: String!
+  category: String!
+  latitude: Float!
+  longitude: Float!
+  pictureUrl: String
+  owner: User!
+}
+
+type Query {
+  findOffers: [Offer!]!
+}
