@@ -11,3 +11,448 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/*! =========================================================
+ *
+ * Material Kit React v1.3.0 based on Material Kit Free - v2.0.2 (Bootstrap 4.0.0 Final Edition)
+ *
+ * =========================================================
+ *
+ * Product Page: https://www.creative-tim.com/product/material-kit-pro
+ * Available with purchase of license from https://www.creative-tim.com/product/material-kit-pro
+ * Copyright 2018 Creative Tim (https://www.creative-tim.com)
+ * License Creative Tim (https://www.creative-tim.com/license)
+ *
+ * ========================================================= */
+ html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-size: 1rem;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 300;
+  line-height: 1.5em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: inherit;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+h4,
+h5,
+h6 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 3.3125rem;
+  line-height: 1.15em;
+}
+
+h2 {
+  font-size: 2.25rem;
+  line-height: 1.5em;
+}
+
+h3 {
+  font-size: 1.5625rem;
+  line-height: 1.4em;
+}
+
+h4 {
+  font-size: 1.125rem;
+  line-height: 1.5em;
+}
+
+h5 {
+  font-size: 1.0625rem;
+  line-height: 1.55em;
+}
+
+h6 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+p {
+  font-size: 14px;
+  margin: 0 0 10px;
+}
+
+b,
+strong {
+  font-weight: 700;
+}
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: #eee;
+  color: #3c4858;
+  margin: 0;
+  font-size: 1rem;
+  text-align: left;
+}
+
+legend {
+  border-bottom: 0;
+}
+
+* {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: 0;
+}
+
+a {
+  color: #00bfa5;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+a:hover,
+a:focus {
+  color: #00a68f;
+  text-decoration: none;
+}
+
+label {
+  font-size: 14px;
+  line-height: 1.42857;
+  color: #aaaaaa;
+  font-weight: 400;
+}
+
+small {
+  font-size: 75%;
+  color: #777;
+  font-weight: 400;
+}
+
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+
+form {
+  margin-bottom: 1.125rem;
+}
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+hr {
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+ol,
+ul,
+dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+#images h4 {
+  margin-bottom: 30px;
+}
+
+#root {
+  overflow: hidden;
+}
+
+#cd-vertical-nav {
+  position: fixed;
+  right: -78px;
+  top: 50%;
+  bottom: auto;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 4;
+}
+
+#cd-vertical-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+#cd-vertical-nav li {
+  text-align: right;
+}
+
+#cd-vertical-nav a {
+  display: inline-block;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  width: 100%;
+}
+
+#cd-vertical-nav a:hover span,
+#cd-vertical-nav a.is-selected .cd-dot {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+#cd-vertical-nav .cd-dot {
+  position: relative;
+  top: 8px;
+  right: calc(100% - 15px);
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: #995581;
+  -webkit-transition: -webkit-transform 0.2s, background-color 0.5s;
+  -webkit-transition: background-color 0.5s, -webkit-transform 0.2s;
+  transition: background-color 0.5s, -webkit-transform 0.2s;
+  transition: transform 0.2s, background-color 0.5s;
+  transition: transform 0.2s, background-color 0.5s, -webkit-transform 0.2s;
+  -webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+}
+
+#cd-vertical-nav a span {
+  float: right;
+  display: inline-block;
+  -webkit-transform: scale(0.6);
+  transform: scale(0.6);
+}
+
+#cd-vertical-nav .cd-label {
+  position: relative;
+  margin-right: 10px;
+  padding: 4px 14px;
+  color: white;
+  background: rgba(0, 0, 0, 0.53);
+  font-size: 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  opacity: 0;
+  -webkit-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+}
+
+#cd-vertical-nav a:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+#cd-vertical-nav a:hover .cd-label {
+  opacity: 1;
+  left: -100%;
+  -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+  -webkit-transition: opacity 0.2s, -webkit-transform 0.2s;
+  transition: opacity 0.2s, -webkit-transform 0.2s;
+  transition: transform 0.2s, opacity 0.2s;
+  transition: transform 0.2s, opacity 0.2s, -webkit-transform 0.2s;
+}
+
+.react-tagsinput {
+  display: inline-block;
+  padding: 20px 0px 0px 0px;
+  width: 100%;
+  line-height: 22px;
+  border-bottom: #d2d2d2 solid 1px;
+}
+
+.react-tagsinput-tag {
+  cursor: pointer;
+  margin: 5px 3px 5px 0;
+  position: relative;
+  padding: 3px 8px;
+  border-radius: 12px;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 0.75em;
+  text-transform: uppercase;
+  display: inline-block;
+  line-height: 1.5em;
+  padding-left: 0.8em;
+}
+
+.react-tagsinput-remove {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.react-tagsinput-tag a::before {
+  font-family: Font awesome\5 Free;
+  content: '\f00d';
+  padding: 0px 2px;
+  font-weight: 900;
+}
+
+.react-tagsinput-tag a {
+  cursor: pointer;
+  position: absolute;
+  top: 3px;
+  right: 0px;
+  opacity: 0;
+  background-color: transparent;
+  color: #ffffff;
+}
+
+.react-tagsinput-input {
+  background: transparent;
+  border: 0;
+  color: #777;
+  font-family: sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  margin-bottom: 6px;
+  margin-top: 1px;
+  outline: none;
+  padding: 5px;
+  width: 120px;
+}
+
+.react-tagsinput-input::placeholder {
+  color: #aaaaaa;
+}
+
+.react-tagsinput .react-tagsinput-tag {
+  -webkit-transition: all 300ms ease 0s;
+  transition: all 300ms ease 0s;
+  background-color: #999;
+}
+
+.react-tagsinput .react-tagsinput-tag:hover {
+  padding-right: 22px;
+}
+
+.react-tagsinput .react-tagsinput-tag:hover a {
+  opacity: 1;
+  padding-right: 4px;
+  background-color: transparent;
+  color: #ffffff;
+}
+
+.react-tagsinput .react-tagsinput-tag.primary {
+  background-color: #00bfa5;
+}
+
+.react-tagsinput .react-tagsinput-tag.info {
+  background-color: #00bcd4;
+}
+
+.react-tagsinput .react-tagsinput-tag.success {
+  background-color: #4caf50;
+}
+
+.react-tagsinput .react-tagsinput-tag.warning {
+  background-color: #ff9800;
+}
+
+.react-tagsinput .react-tagsinput-tag.danger {
+  background-color: #f44336;
+}
+
+.react-tagsinput .react-tagsinput-tag.rose {
+  background-color: #e91e63;
+}
+
+.react-tagsinput .react-tagsinput-tag.default {
+  background-color: #999;
+}
+.filepond {
+  padding: 15px 0px;
+}
+.filepond--drop-label {
+  color: #4c4e53;
+}
+
+.filepond--label-action {
+  text-decoration-color: #babdc0;
+}
+
+.filepond--panel-root {
+  border-radius: 2em;
+  background-color: #edf0f4;
+  height: 1em;
+}
+
+.filepond--item-panel {
+  background-color: #595e68;
+}
+
+.filepond--drip-blob {
+  background-color: #7f8a9a;
+}
+
+.submit-btn-wrapper {
+  padding-top: 25px;
+  text-align: center;
+}
+
+@keyframes comeIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  75% {
+    transform: scale(1.03);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.xmasonry .xblock {
+  animation: comeIn ease 0.5s;
+  animation-iteration-count: 1;
+  transition: left 0.3s ease, top 0.3s ease;
+}
+
+.masonrycard {
+  position: relative;
+  margin: 7px;
+  overflow: hidden;
+}
+
+/*# sourceMappingURL=material-kit-pro-react.css.map */
