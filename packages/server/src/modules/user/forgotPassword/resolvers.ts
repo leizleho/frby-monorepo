@@ -1,5 +1,5 @@
 import * as bcrypt from 'bcryptjs';
-import { changePasswordSchema } from '../../../yupSchemas/user';
+import { changePasswordSchema } from '@frby/common';
 
 import { ResolverMap } from '../../../types/graphql-utils';
 // import { forgotPasswordLockAccount } from '../../../utils/forgotPasswordLockAccount';

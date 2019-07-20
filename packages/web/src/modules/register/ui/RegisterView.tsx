@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { withFormik, FormikErrors, FormikProps } from 'formik';
-import { validUserSchema } from '../../../yupSchemas/user';
+import { validUserSchema } from '@frby/common';
 
 import CustomInput from '../../shared/CustomInput';
 import withStyles from '@material-ui/core/styles/withStyles';
