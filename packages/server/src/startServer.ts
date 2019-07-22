@@ -50,7 +50,7 @@ export const startServer = async () => {
     })
   });
 
-  const limiter = RateLimit({
+  const limiter = new RateLimit({
     store: new RateLimitRedisStore({
       client: redis
     }),
