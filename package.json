@@ -5,8 +5,6 @@
   ],
   "nohoist": [
     "**/jest",
-    "**/babel-jest",
-    "**/react-native",
-    "**/react-native/**"
+    "**/babel-jest"
   ]
 }

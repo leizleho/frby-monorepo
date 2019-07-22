@@ -1,35 +1,49 @@
 {
   "name": "@frby/app",
   "version": "1.0.0",
-  "main": "node_modules/expo/AppEntry.js",
+  "main": "__generated__/AppEntry.js",
   "scripts": {
-    "start": "expo start",
+    "start": "expo start --clear",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "postinstall": "expo-yarn-workspaces postinstall"
   },
   "dependencies": {
-    "expo": "^33.0.7",
+    "apollo-cache-inmemory": "^1.6.2",
+    "apollo-client": "^2.6.3",
+    "apollo-link-http": "^1.5.15",
+    "expo": "^33.0.0",
+    "graphql": "^14.4.2",
+    "graphql-tag": "^2.10.1",
     "react": "16.8.6",
+    "react-apollo": "^2.5.8",
     "react-dom": "^16.8.6",
     "react-native": "https://github.com/expo/react-native/archive/sdk-33.0.0.tar.gz",
-    "react-native-web": "^0.11.5"
+    "react-native-elements": "^1.1.0",
+    "react-native-web": "^0.11.5",
+    "react-router-native": "^5.0.1"
   },
   "devDependencies": {
     "@types/react": "^16.8.23",
     "@types/react-native": "^0.60.2",
+    "@types/react-native-elements": "^0.18.0",
+    "@types/react-router-native": "^4.2.4",
     "babel-preset-expo": "^5.2.0",
+    "expo-yarn-workspaces": "^1.2.0",
     "typescript": "^3.5.3"
   },
   "workspaces": {
     "nohoist": [
       "react-native",
       "react-native/**",
-      "react",
-      "react/**",
+      "react-native-elements",
+      "react-native-elements/**",
       "expo",
       "expo/**",
+      "expo-yarn-workspaces",
+      "expo-yarn-workspaces/**",
       "react-dom",
       "react-dom/**"
     ]
