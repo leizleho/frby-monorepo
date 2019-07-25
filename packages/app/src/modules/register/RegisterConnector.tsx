@@ -1,26 +1,14 @@
 import * as React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { Button } from 'react-native-elements';
+import { RegisterView } from './registerview';
 
 export class RegisterConnector extends React.PureComponent {
-  onPress = () => {
-    console.log('button pressed');
+  dummySubmit = async (values: any) => {
+    console.log(values);
+
+    return null;
   };
 
   render() {
-    return (
-      <View style={styles.container}>
-        <Button title="BUTTON" onPress={this.onPress} />
-      </View>
-    );
+    return <RegisterView submit={this.dummySubmit} />;
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
-});
