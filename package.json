@@ -5,6 +5,20 @@
   ],
   "nohoist": [
     "**/jest",
-    "**/babel-jest"
+    "**/babel-jest",
+    "react-native",
+    "react-native/**",
+    "react-native-elements",
+    "react-native-elements/**",
+    "expo",
+    "expo/**",
+    "expo-font",
+    "expo-font/**",
+    "expo-yarn-workspaces",
+    "expo-yarn-workspaces/**",
+    "react-dom",
+    "react-dom/**",
+    "react-native-keyboard-spacer",
+    "react-native-keyboard-spacer/**"
   ]
 }

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { RegisterView } from './registerview';
+import { RegisterView } from './RegisterView';
 
 export class RegisterConnector extends React.PureComponent {
   dummySubmit = async (values: any) => {

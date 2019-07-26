@@ -1,8 +1,10 @@
 import * as React from 'react';
 import { withFormik, FormikErrors, FormikProps } from 'formik';
 import { validUserSchema } from '@frby/common';
-import { View, Button } from 'react-native';
-import { ThemeProvider, Input } from 'react-native-elements';
+import { ThemeProvider, Button, Input } from 'react-native-elements';
+
+import ViewContainer from '../shared/ViewContainer';
+import StyleGuide from '../shared/StyleGuide';
 
 interface FormValues {
   email: string;
@@ -22,39 +24,80 @@ class C extends React.PureComponent<FormikProps<FormValues> & Props> {
       touched,
       errors,
       setFieldTouched,
-      isSubmitting
+      isSubmitting,
+      isValid
     } = this.props;
     return (
-      <View style={{ marginTop: 200 }}>
-        <Input
-          placeholder="Email Address"
-          keyboardType="email-address"
-          autoCapitalize="none"
-          value={values.email}
-          onChangeText={value => setFieldValue('email', value)}
-          onBlur={() => setFieldTouched('email')}
-          editable={!isSubmitting}
-          errorMessage={
-            touched.email && errors.email ? errors.email : undefined
-          }
-        />
-        <Input
-          placeholder="Password"
-          secureTextEntry
-          autoCapitalize="none"
-          value={values.password}
-          onChangeText={value => setFieldValue('password', value)}
-          onBlur={() => setFieldTouched('password')}
-          editable={!isSubmitting}
-          errorMessage={
-            touched.password && errors.password ? errors.password : undefined
-          }
-        />
-        <Button title="Submit" onPress={handleSubmit as any} />
-      </View>
+      <ThemeProvider theme={theme}>
+        <ViewContainer title="Freebay" subtitle="Find Stuff, Give Stuff">
+          <Input
+            placeholder="Email Address"
+            keyboardType="email-address"
+            autoCapitalize="none"
+            value={values.email}
+            onChangeText={value => setFieldValue('email', value)}
+            onBlur={() => setFieldTouched('email')}
+            editable={!isSubmitting}
+            errorMessage={
+              touched.email && errors.email ? errors.email : undefined
+            }
+          />
+          <Input
+            placeholder="Password"
+            secureTextEntry
+            autoCapitalize="none"
+            value={values.password}
+            onChangeText={value => setFieldValue('password', value)}
+            onBlur={() => setFieldTouched('password')}
+            editable={!isSubmitting}
+            errorMessage={
+              touched.password && errors.password ? errors.password : undefined
+            }
+          />
+          <Button
+            title="REGISTER"
+            onPress={handleSubmit as any}
+            disabled={!isValid || isSubmitting}
+            loading={isSubmitting}
+            loadingProps={{ size: 'large', color: 'white' }}
+          />
+        </ViewContainer>
+      </ThemeProvider>
     );
   }
 }
+
+const theme = {
+  Input: {
+    inputContainerStyle: {
+      ...StyleGuide.styles.borderRadius,
+      height: 45,
+      borderWidth: 1,
+      borderColor: 'rgba(255, 255, 255, 0.5)',
+      padding: StyleGuide.spacing.tiny,
+      marginBottom: StyleGuide.spacing.tiny,
+      ...StyleGuide.styles.shadow
+    }
+  },
+  Button: {
+    containerStyle: {
+      width: '100%',
+      padding: StyleGuide.spacing.small,
+      marginBottom: StyleGuide.spacing.small
+    },
+    buttonStyle: {
+      height: 50,
+      backgroundColor: '#009884',
+      ...StyleGuide.styles.borderRadius
+    },
+    disabledStyle: {
+      backgroundColor: '#009884',
+      opacity: 0.4
+    },
+    titleStyle: { color: 'white' },
+    disabledTitleStyle: { color: 'white' }
+  }
+};
 
 export const RegisterView = withFormik<Props, FormValues>({
   validationSchema: validUserSchema,

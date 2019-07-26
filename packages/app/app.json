@@ -16,12 +16,13 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": ["**/*.ttf", "**/*.otf", "**/*.png"],
     "ios": {
       "supportsTablet": true
     },
     "packagerOpts": {
-      "config": "metro.config.js"
+      "config": "metro.config.js",
+      "assetExts": ["otf", "ttf"]
     }
   }
 }
