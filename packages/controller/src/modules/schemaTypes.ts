@@ -167,6 +167,40 @@ export interface SearchOffersQueryVariables {
 /* eslint-disable */
 // This file was automatically generated and should not be edited.
 
+// ====================================================
+// GraphQL query operation: ViewOfferQuery
+// ====================================================
+
+export interface ViewOfferQuery_viewOffer_owner {
+  __typename: "User";
+  id: string;
+  email: string;
+}
+
+export interface ViewOfferQuery_viewOffer {
+  __typename: "Offer";
+  id: string;
+  title: string;
+  description: string;
+  category: string;
+  latitude: number;
+  longitude: number;
+  pictureUrl: string | null;
+  owner: ViewOfferQuery_viewOffer_owner;
+}
+
+export interface ViewOfferQuery {
+  viewOffer: ViewOfferQuery_viewOffer | null;
+}
+
+export interface ViewOfferQueryVariables {
+  id: string;
+}
+
+/* tslint:disable */
+/* eslint-disable */
+// This file was automatically generated and should not be edited.
+
 //==============================================================
 // START Enums and Input Objects
 //==============================================================
