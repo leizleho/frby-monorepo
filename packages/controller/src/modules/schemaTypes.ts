@@ -131,9 +131,51 @@ export interface RegisterMutationVariables {
 /* eslint-disable */
 // This file was automatically generated and should not be edited.
 
+// ====================================================
+// GraphQL query operation: SearchOffersQuery
+// ====================================================
+
+export interface SearchOffersQuery_searchOffers_owner {
+  __typename: "User";
+  id: string;
+  email: string;
+}
+
+export interface SearchOffersQuery_searchOffers {
+  __typename: "Offer";
+  id: string;
+  title: string;
+  description: string;
+  category: string;
+  longitude: number;
+  latitude: number;
+  pictureUrl: string | null;
+  owner: SearchOffersQuery_searchOffers_owner;
+}
+
+export interface SearchOffersQuery {
+  searchOffers: SearchOffersQuery_searchOffers[];
+}
+
+export interface SearchOffersQueryVariables {
+  input?: SearchOffersInput | null;
+  offset: number;
+  limit: number;
+}
+
+/* tslint:disable */
+/* eslint-disable */
+// This file was automatically generated and should not be edited.
+
 //==============================================================
 // START Enums and Input Objects
 //==============================================================
+
+export interface SearchOffersInput {
+  title?: string | null;
+  description?: string | null;
+  category?: string | null;
+}
 
 //==============================================================
 // END Enums and Input Objects
