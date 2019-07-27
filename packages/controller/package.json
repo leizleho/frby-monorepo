@@ -8,7 +8,8 @@
     "build": "rimraf ./dist && tsc",
     "gen-schema": "apollo schema:download --endpoint=http://localhost:4000",
     "gen-types": "apollo codegen:generate src/modules/schemaTypes.ts --localSchemaFile=schema.json --includes='src/**/*.tsx' --target typescript --outputFlat",
-    "apollo-gentypes": "yarn gen-schema && yarn gen-types"
+    "apollo-gentypes": "yarn gen-schema && yarn gen-types",
+    "refresh:types": "yarn apollo-gentypes && yarn build"
   },
   "dependencies": {
     "graphql": "^14.4.2",

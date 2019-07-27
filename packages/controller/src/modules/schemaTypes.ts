@@ -3,6 +3,86 @@
 // This file was automatically generated and should not be edited.
 
 // ====================================================
+// GraphQL mutation operation: ForgotPasswordChangeMutation
+// ====================================================
+
+export interface ForgotPasswordChangeMutation_forgotPasswordChange {
+  __typename: "Error";
+  path: string;
+  message: string;
+}
+
+export interface ForgotPasswordChangeMutation {
+  forgotPasswordChange: ForgotPasswordChangeMutation_forgotPasswordChange[] | null;
+}
+
+export interface ForgotPasswordChangeMutationVariables {
+  newPassword: string;
+  key: string;
+}
+
+/* tslint:disable */
+/* eslint-disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL mutation operation: SendForgotPasswordEmailMutation
+// ====================================================
+
+export interface SendForgotPasswordEmailMutation {
+  sendForgotPasswordEmail: boolean | null;
+}
+
+export interface SendForgotPasswordEmailMutationVariables {
+  email: string;
+}
+
+/* tslint:disable */
+/* eslint-disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL mutation operation: LoginMutation
+// ====================================================
+
+export interface LoginMutation_login_errors {
+  __typename: "Error";
+  path: string;
+  message: string;
+}
+
+export interface LoginMutation_login {
+  __typename: "LoginResponse";
+  errors: LoginMutation_login_errors[] | null;
+  sessionId: string | null;
+}
+
+export interface LoginMutation {
+  login: LoginMutation_login;
+}
+
+export interface LoginMutationVariables {
+  email: string;
+  password: string;
+}
+
+/* tslint:disable */
+/* eslint-disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL mutation operation: LogoutMutation
+// ====================================================
+
+export interface LogoutMutation {
+  logout: boolean | null;
+}
+
+/* tslint:disable */
+/* eslint-disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
 // GraphQL mutation operation: RegisterMutation
 // ====================================================
 
