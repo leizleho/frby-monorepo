@@ -26,6 +26,32 @@ export interface ForgotPasswordChangeMutationVariables {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
+// GraphQL query operation: FindOffersQuery
+// ====================================================
+
+export interface FindOffersQuery_findOffers_owner {
+  __typename: "User";
+  id: string;
+  email: string;
+}
+
+export interface FindOffersQuery_findOffers {
+  __typename: "Offer";
+  id: string;
+  title: string;
+  pictureUrl: string | null;
+  owner: FindOffersQuery_findOffers_owner;
+}
+
+export interface FindOffersQuery {
+  findOffers: FindOffersQuery_findOffers[];
+}
+
+/* tslint:disable */
+/* eslint-disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
 // GraphQL mutation operation: SendForgotPasswordEmailMutation
 // ====================================================
 
