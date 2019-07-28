@@ -3,6 +3,23 @@
 // This file was automatically generated and should not be edited.
 
 // ====================================================
+// GraphQL query operation: MeQuery
+// ====================================================
+
+export interface MeQuery_me {
+  __typename: "User";
+  email: string;
+}
+
+export interface MeQuery {
+  me: MeQuery_me | null;
+}
+
+/* tslint:disable */
+/* eslint-disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
 // GraphQL mutation operation: ForgotPasswordChangeMutation
 // ====================================================
 
@@ -19,6 +36,53 @@ export interface ForgotPasswordChangeMutation {
 export interface ForgotPasswordChangeMutationVariables {
   newPassword: string;
   key: string;
+}
+
+/* tslint:disable */
+/* eslint-disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL mutation operation: CreateOfferMutation
+// ====================================================
+
+export interface CreateOfferMutation {
+  createOffer: boolean;
+}
+
+export interface CreateOfferMutationVariables {
+  picture?: any | null;
+  title: string;
+  category: string;
+  description: string;
+  latitude: number;
+  longitude: number;
+}
+
+/* tslint:disable */
+/* eslint-disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL query operation: FindOffersQuery
+// ====================================================
+
+export interface FindOffersQuery_findOffers_owner {
+  __typename: "User";
+  id: string;
+  email: string;
+}
+
+export interface FindOffersQuery_findOffers {
+  __typename: "Offer";
+  id: string;
+  title: string;
+  pictureUrl: string | null;
+  owner: FindOffersQuery_findOffers_owner;
+}
+
+export interface FindOffersQuery {
+  findOffers: FindOffersQuery_findOffers[];
 }
 
 /* tslint:disable */
@@ -105,9 +169,85 @@ export interface RegisterMutationVariables {
 /* eslint-disable */
 // This file was automatically generated and should not be edited.
 
+// ====================================================
+// GraphQL query operation: SearchOffersQuery
+// ====================================================
+
+export interface SearchOffersQuery_searchOffers_owner {
+  __typename: "User";
+  id: string;
+  email: string;
+}
+
+export interface SearchOffersQuery_searchOffers {
+  __typename: "Offer";
+  id: string;
+  title: string;
+  description: string;
+  category: string;
+  longitude: number;
+  latitude: number;
+  pictureUrl: string | null;
+  owner: SearchOffersQuery_searchOffers_owner;
+}
+
+export interface SearchOffersQuery {
+  searchOffers: SearchOffersQuery_searchOffers[];
+}
+
+export interface SearchOffersQueryVariables {
+  input?: SearchOffersInput | null;
+  offset: number;
+  limit: number;
+}
+
+/* tslint:disable */
+/* eslint-disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL query operation: ViewOfferQuery
+// ====================================================
+
+export interface ViewOfferQuery_viewOffer_owner {
+  __typename: "User";
+  id: string;
+  email: string;
+}
+
+export interface ViewOfferQuery_viewOffer {
+  __typename: "Offer";
+  id: string;
+  title: string;
+  description: string;
+  category: string;
+  latitude: number;
+  longitude: number;
+  pictureUrl: string | null;
+  owner: ViewOfferQuery_viewOffer_owner;
+}
+
+export interface ViewOfferQuery {
+  viewOffer: ViewOfferQuery_viewOffer | null;
+}
+
+export interface ViewOfferQueryVariables {
+  id: string;
+}
+
+/* tslint:disable */
+/* eslint-disable */
+// This file was automatically generated and should not be edited.
+
 //==============================================================
 // START Enums and Input Objects
 //==============================================================
+
+export interface SearchOffersInput {
+  title?: string | null;
+  description?: string | null;
+  category?: string | null;
+}
 
 //==============================================================
 // END Enums and Input Objects
