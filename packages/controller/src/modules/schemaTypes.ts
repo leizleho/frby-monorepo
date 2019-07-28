@@ -26,6 +26,27 @@ export interface ForgotPasswordChangeMutationVariables {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
+// GraphQL mutation operation: CreateOfferMutation
+// ====================================================
+
+export interface CreateOfferMutation {
+  createOffer: boolean;
+}
+
+export interface CreateOfferMutationVariables {
+  picture?: any | null;
+  title: string;
+  category: string;
+  description: string;
+  latitude: number;
+  longitude: number;
+}
+
+/* tslint:disable */
+/* eslint-disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
 // GraphQL query operation: FindOffersQuery
 // ====================================================
 
