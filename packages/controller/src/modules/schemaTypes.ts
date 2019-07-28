@@ -206,6 +206,23 @@ export interface SearchOffersQueryVariables {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
+// GraphQL mutation operation: UpdateOfferMutation
+// ====================================================
+
+export interface UpdateOfferMutation {
+  updateOffer: boolean;
+}
+
+export interface UpdateOfferMutationVariables {
+  offerId: string;
+  input: UpdateOfferInput;
+}
+
+/* tslint:disable */
+/* eslint-disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
 // GraphQL query operation: ViewOfferQuery
 // ====================================================
 
@@ -247,6 +264,16 @@ export interface SearchOffersInput {
   title?: string | null;
   description?: string | null;
   category?: string | null;
+}
+
+export interface UpdateOfferInput {
+  title?: string | null;
+  picture?: any | null;
+  pictureUrl?: string | null;
+  category?: string | null;
+  description?: string | null;
+  latitude?: number | null;
+  longitude?: number | null;
 }
 
 //==============================================================
