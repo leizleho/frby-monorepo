@@ -43,6 +43,22 @@ export interface ForgotPasswordChangeMutationVariables {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
+// GraphQL mutation operation: CreateMessageMutation
+// ====================================================
+
+export interface CreateMessageMutation {
+  createMessage: boolean;
+}
+
+export interface CreateMessageMutationVariables {
+  message: MessageInput;
+}
+
+/* tslint:disable */
+/* eslint-disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
 // GraphQL mutation operation: CreateOfferMutation
 // ====================================================
 
@@ -206,6 +222,52 @@ export interface SearchOffersQueryVariables {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
+// GraphQL mutation operation: UpdateOfferMutation
+// ====================================================
+
+export interface UpdateOfferMutation {
+  updateOffer: boolean;
+}
+
+export interface UpdateOfferMutationVariables {
+  offerId: string;
+  input: UpdateOfferInput;
+}
+
+/* tslint:disable */
+/* eslint-disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL query operation: ViewMessagesQuery
+// ====================================================
+
+export interface ViewMessagesQuery_messages_user {
+  __typename: "User";
+  id: string;
+  email: string;
+}
+
+export interface ViewMessagesQuery_messages {
+  __typename: "Message";
+  text: string;
+  user: ViewMessagesQuery_messages_user;
+  offerId: string;
+}
+
+export interface ViewMessagesQuery {
+  messages: ViewMessagesQuery_messages[];
+}
+
+export interface ViewMessagesQueryVariables {
+  offerId: string;
+}
+
+/* tslint:disable */
+/* eslint-disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
 // GraphQL query operation: ViewOfferQuery
 // ====================================================
 
@@ -243,10 +305,25 @@ export interface ViewOfferQueryVariables {
 // START Enums and Input Objects
 //==============================================================
 
+export interface MessageInput {
+  text: string;
+  offerId: string;
+}
+
 export interface SearchOffersInput {
   title?: string | null;
   description?: string | null;
   category?: string | null;
+}
+
+export interface UpdateOfferInput {
+  title?: string | null;
+  picture?: any | null;
+  pictureUrl?: string | null;
+  category?: string | null;
+  description?: string | null;
+  latitude?: number | null;
+  longitude?: number | null;
 }
 
 //==============================================================
