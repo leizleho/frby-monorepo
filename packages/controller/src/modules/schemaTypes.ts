@@ -43,6 +43,22 @@ export interface ForgotPasswordChangeMutationVariables {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
+// GraphQL mutation operation: CreateMessageMutation
+// ====================================================
+
+export interface CreateMessageMutation {
+  createMessage: boolean;
+}
+
+export interface CreateMessageMutationVariables {
+  message: MessageInput;
+}
+
+/* tslint:disable */
+/* eslint-disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
 // GraphQL mutation operation: CreateOfferMutation
 // ====================================================
 
@@ -259,6 +275,11 @@ export interface ViewOfferQueryVariables {
 //==============================================================
 // START Enums and Input Objects
 //==============================================================
+
+export interface MessageInput {
+  text: string;
+  offerId: string;
+}
 
 export interface SearchOffersInput {
   title?: string | null;
