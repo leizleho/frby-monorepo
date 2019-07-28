@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { LoginController } from '@frby/controller';
 import { RouteComponentProps } from 'react-router-native';
-// import { SecureStore } from "expo";
+// import { SecureStore } from 'expo';
 
 import { LoginView } from './LoginView';
-// import { SID_KEY } from "../shared/constants";
+// import { SID_KEY } from '../shared/constants';
 
 export class LoginConnector extends React.PureComponent<
   RouteComponentProps<{}>
