@@ -39,6 +39,7 @@ const customInputStyle = {
     fontSize: '14px',
     lineHeight: '1.42857',
     top: '10px',
+    letterSpacing: 'unset',
     '& + $underline': {
       marginTop: '0px'
     }
@@ -78,6 +79,7 @@ const customInputStyle = {
   },
   input: {
     color: grayColor[13],
+    height: 'unset',
     '&,&::placeholder': {
       fontSize: '14px',
       fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',

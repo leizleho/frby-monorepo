@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { withFormik, FormikErrors, FormikProps } from 'formik';
+import { withFormik, FormikErrors, FormikProps, Field, Form } from 'formik';
 import { validUserSchema } from '@frby/common';
 
 import CustomInput from '../../shared/CustomInput';
@@ -7,13 +7,16 @@ import withStyles from '@material-ui/core/styles/withStyles';
 import { Button, InputAdornment } from '@material-ui/core';
 // @material-ui/icons
 import Email from '@material-ui/icons/Email';
-import Icon from '@material-ui/core/Icon';
+import Lock from '@material-ui/icons/Lock';
 import registerStyle from './registerStyle';
 
 import Header from '../../shared/Header/Header';
 import HeaderLinks from '../../shared/Header/HeaderLinks';
 import GridContainer from '../../shared/Grid/GridContainer';
 import GridItem from '../../shared/Grid/GridItem';
+import Card from '../../shared/Card/Card';
+import CardHeader from '../../shared/Card/CardHeader';
+import CardBody from '../../shared/Card/CardBody';
 import image from '../../../assets/img/bg7.jpg';
 
 interface FormValues {
@@ -28,15 +31,7 @@ interface Props {
 
 class C extends React.PureComponent<FormikProps<FormValues> & Props> {
   render() {
-    const {
-      classes,
-      values,
-      handleChange,
-      handleSubmit,
-      handleBlur,
-      touched,
-      errors
-    } = this.props;
+    const { classes } = this.props;
     return (
       <div>
         <Header
@@ -56,63 +51,54 @@ class C extends React.PureComponent<FormikProps<FormValues> & Props> {
           <div className={classes.container}>
             <GridContainer justify="center">
               <GridItem xs={12} sm={8} md={8}>
-                <form style={{ display: 'flex' }} onSubmit={handleSubmit}>
-                  <div style={{ display: 'flex', width: 400, margin: 'auto' }}>
-                    <CustomInput
-                      id="email"
-                      formControlProps={{
-                        fullWidth: true
-                      }}
-                      inputProps={{
-                        placeholder: 'Email address',
-                        name: 'email',
-                        type: 'email',
-                        startAdornment: (
-                          <InputAdornment position="start">
-                            <Email className={classes.inputIconsColor} />
-                          </InputAdornment>
-                        )
-                      }}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      value={values.email}
-                      error={touched.email && errors.email}
-                      errorMsg={
-                        touched.email && errors.email ? errors.email : ''
-                      }
-                    />
-                    <CustomInput
-                      id="password"
-                      formControlProps={{
-                        fullWidth: true
-                      }}
-                      inputProps={{
-                        placeholder: 'Password',
-                        name: 'password',
-                        type: 'password',
-                        startAdornment: (
-                          <InputAdornment position="start">
-                            <Icon className={classes.inputIconsColor}>
-                              lock_outline
-                            </Icon>
-                          </InputAdornment>
-                        )
-                      }}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      value={values.password}
-                      error={touched.password && errors.password}
-                      errorMsg={
-                        touched.password && errors.password
-                          ? errors.password
-                          : ''
-                      }
-                    />
-                  </div>
-                  <Button type="submit" color="primary">
-                    Register
-                  </Button>
-                </form>
+                <Card className={classes.cardSignup}>
+                  <CardHeader
+                    color="primary"
+                    signup
+                    className={classes.cardHeader}
+                  >
+                    <h2 className={classes.cardTitle}>Register</h2>
+                  </CardHeader>
+                  <CardBody>
+                    <Form style={{ display: 'flex' }}>
+                      <div
+                        style={{ display: 'flex', width: 400, margin: 'auto' }}
+                      >
+                        <Field
+                          name="email"
+                          prefix={
+                            <InputAdornment position="start">
+                              <Email className={classes.inputIconsColor} />
+                            </InputAdornment>
+                          }
+                          placeholder="Email"
+                          formControlProps={{
+                            fullWidth: true
+                          }}
+                          component={CustomInput}
+                        />
+
+                        <Field
+                          name="password"
+                          type="password"
+                          prefix={
+                            <InputAdornment position="start">
+                              <Lock className={classes.inputIconsColor} />
+                            </InputAdornment>
+                          }
+                          placeholder="Password"
+                          formControlProps={{
+                            fullWidth: true
+                          }}
+                          component={CustomInput}
+                        />
+                      </div>
+                      <Button type="submit" color="primary">
+                        Register
+                      </Button>
+                    </Form>
+                  </CardBody>
+                </Card>
               </GridItem>
             </GridContainer>
           </div>
