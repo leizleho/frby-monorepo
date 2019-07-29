@@ -1,17 +1,33 @@
 import React from 'react';
+import { FieldProps } from 'formik';
 import classNames from 'classnames';
-// @material-ui/core components
 import withStyles from '@material-ui/core/styles/withStyles';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import Input from '@material-ui/core/Input';
-// @material-ui/icons
 import Clear from '@material-ui/icons/Clear';
 import Check from '@material-ui/icons/Check';
-// core components
 import customInputStyle from './customInputStyle';
 
-function CustomInput({ ...props }: any) {
+interface CustomInputProps extends FieldProps<any> {
+  classes: any;
+  labelText?: React.ReactNode;
+  labelProps?: object;
+  id?: string;
+  inputProps?: object;
+  formControlProps?: any;
+  inputRootCustomClasses?: any;
+  error?: any;
+  success?: boolean;
+  white?: boolean;
+  placeholder?: string;
+  prefix?: React.ReactNode;
+}
+const CustomInput: React.SFC<CustomInputProps> = ({
+  field: { onChange, onBlur, ...field },
+  form: { touched, errors, values, setFieldValue, handleSubmit },
+  ...props
+}) => {
   const {
     classes,
     formControlProps,
@@ -19,14 +35,15 @@ function CustomInput({ ...props }: any) {
     id,
     labelProps,
     inputProps,
-    error,
-    errorMsg,
     white,
     inputRootCustomClasses,
     success,
-    value,
-    onChange
+    placeholder,
+    prefix
   } = props;
+
+  const error = touched[field.name] && errors[field.name];
+  const errorMsg = error ? errors[field.name] : null;
 
   const labelClasses = classNames({
     [' ' + classes.labelRootError]: error,
@@ -72,10 +89,14 @@ function CustomInput({ ...props }: any) {
           disabled: classes.disabled,
           underline: underlineClasses
         }}
-        id={id}
-        {...inputProps}
-        value={value}
+        id={field.name}
+        name={field.name}
+        placeholder={placeholder}
+        value={values[field.name]}
         onChange={onChange}
+        onBlur={onBlur}
+        startAdornment={prefix}
+        {...inputProps}
       />
       {error && (
         <InputLabel className={classes.labelRootError}>{errorMsg}</InputLabel>
@@ -87,6 +108,5 @@ function CustomInput({ ...props }: any) {
       ) : null}
     </FormControl>
   );
-}
-
+};
 export default withStyles(customInputStyle as any)(CustomInput);
