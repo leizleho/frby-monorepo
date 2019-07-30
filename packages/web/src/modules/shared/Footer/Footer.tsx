@@ -2,7 +2,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import withStyles from '@material-ui/core/styles/withStyles';
-import footerStyle from './footerStyle.jsx';
+import footerStyle from './footerStyle';
 
 interface FooterProps {
   classes: any;
