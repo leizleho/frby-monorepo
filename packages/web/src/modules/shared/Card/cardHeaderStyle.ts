@@ -30,9 +30,9 @@ const cardHeaderStyle = {
     position: 'relative',
     padding: '0',
     zIndex: '1',
-    marginLeft: '15px',
-    marginRight: '15px',
-    marginTop: '-30px',
+    marginLeft: '5px',
+    marginRight: '5px',
+    marginTop: '5px',
     borderRadius: '6px',
     '& img': {
       width: '100%',
@@ -41,9 +41,9 @@ const cardHeaderStyle = {
       boxShadow:
         '0 5px 15px -8px rgba(' +
         hexToRgb(blackColor) +
-        ', 0.24), 0 8px 10px -5px rgba(' +
+        ', 0.15), 0 8px 10px -5px rgba(' +
         hexToRgb(blackColor) +
-        ', 0.2)'
+        ', 0.05)'
     },
     '& a': {
       display: 'block'
