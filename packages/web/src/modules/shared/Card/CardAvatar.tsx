@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import withStyles from '@material-ui/core/styles/withStyles';
-import cardAvatarStyle from './cardAvatarStyle.jsx';
+import cardAvatarStyle from './cardAvatarStyle';
 
 interface CardAvatarProps {
   classes?: any;

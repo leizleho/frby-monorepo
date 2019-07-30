@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import withStyles from '@material-ui/core/styles/withStyles';
-import cardStyle from './cardStyle.jsx';
+import cardStyle from './cardStyle';
 
 interface CardProps {
   classes: any;
