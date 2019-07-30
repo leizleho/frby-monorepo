@@ -4,7 +4,7 @@ import { validUserSchema } from '@frby/common';
 
 import CustomInput from '../../shared/CustomInput';
 import withStyles from '@material-ui/core/styles/withStyles';
-import { Button, InputAdornment } from '@material-ui/core';
+import { InputAdornment } from '@material-ui/core';
 // @material-ui/icons
 import Email from '@material-ui/icons/Email';
 import Lock from '@material-ui/icons/Lock';
@@ -18,7 +18,7 @@ import Card from '../../shared/Card/Card';
 import CardHeader from '../../shared/Card/CardHeader';
 import CardBody from '../../shared/Card/CardBody';
 import image from '../../../assets/img/bg7.jpg';
-
+import Button from '../../shared/CustomButtons/Button';
 interface FormValues {
   email: string;
   password: string;
@@ -31,7 +31,7 @@ interface Props {
 
 class C extends React.PureComponent<FormikProps<FormValues> & Props> {
   render() {
-    const { classes } = this.props;
+    const { classes, handleSubmit } = this.props;
     return (
       <div>
         <Header
@@ -60,42 +60,46 @@ class C extends React.PureComponent<FormikProps<FormValues> & Props> {
                     <h2 className={classes.cardTitle}>Register</h2>
                   </CardHeader>
                   <CardBody>
-                    <Form style={{ display: 'flex' }}>
-                      <div
-                        style={{ display: 'flex', width: 400, margin: 'auto' }}
-                      >
-                        <Field
-                          name="email"
-                          prefix={
-                            <InputAdornment position="start">
-                              <Email className={classes.inputIconsColor} />
-                            </InputAdornment>
-                          }
-                          placeholder="Email"
-                          formControlProps={{
-                            fullWidth: true
-                          }}
-                          component={CustomInput}
-                        />
+                    <Form className={classes.form}>
+                      <Field
+                        name="email"
+                        prefix={
+                          <InputAdornment position="start">
+                            <Email className={classes.inputIconsColor} />
+                          </InputAdornment>
+                        }
+                        placeholder="Email"
+                        formControlProps={{
+                          fullWidth: true
+                        }}
+                        component={CustomInput}
+                      />
 
-                        <Field
-                          name="password"
-                          type="password"
-                          prefix={
-                            <InputAdornment position="start">
-                              <Lock className={classes.inputIconsColor} />
-                            </InputAdornment>
-                          }
-                          placeholder="Password"
-                          formControlProps={{
-                            fullWidth: true
-                          }}
-                          component={CustomInput}
-                        />
+                      <Field
+                        name="password"
+                        type="password"
+                        prefix={
+                          <InputAdornment position="start">
+                            <Lock className={classes.inputIconsColor} />
+                          </InputAdornment>
+                        }
+                        placeholder="Password"
+                        formControlProps={{
+                          fullWidth: true
+                        }}
+                        component={CustomInput}
+                      />
+
+                      <div className={classes.textCenter}>
+                        <Button
+                          onClick={handleSubmit}
+                          round
+                          size="sm"
+                          color="primary"
+                        >
+                          Register
+                        </Button>
                       </div>
-                      <Button type="submit" color="primary">
-                        Register
-                      </Button>
                     </Form>
                   </CardBody>
                 </Card>
