@@ -6,8 +6,8 @@ import MapboxField from '../../shared/MapboxField';
 
 export const Page1 = () => (
   <>
-    <Field name="title" placeholder="Title" component={InputField} />
-    <Field name="category" placeholder="Category" component={InputField} />
+    <Field name="title" placeholder="Title" component={CustomInput} />
+    <Field name="category" placeholder="Category" component={CustomInput} />
     <Field
       name="description"
       placeholder="Description"

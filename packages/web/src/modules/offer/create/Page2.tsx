@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Field } from 'formik';
-import { InputField } from '../../../../modules/shared/InputField';
+import CustomInput from '../../shared/CustomInput';
 
 export const Page2 = () => (
   <>
@@ -8,15 +8,13 @@ export const Page2 = () => (
       label="Latitude"
       name="latitude"
       placeholder="Latitude"
-      component={InputField}
-      useNumberComponent={true}
+      component={CustomInput}
     />
     <Field
       label="Latitude"
       name="longitude"
       placeholder="Longitude"
-      component={InputField}
-      useNumberComponent={true}
+      component={CustomInput}
     />
   </>
 );
