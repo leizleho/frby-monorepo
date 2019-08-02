@@ -18,6 +18,7 @@
     "formik": "^1.5.8",
     "graphql": "^14.4.2",
     "graphql-tag": "^2.10.1",
+    "lodash.get": "^4.4.2",
     "mapbox-gl": "^1.2.0",
     "react": "^16.8.6",
     "react-apollo": "^2.5.8",
@@ -54,6 +55,7 @@
   },
   "devDependencies": {
     "@types/classnames": "^2.2.9",
+    "@types/lodash.get": "^4.4.6",
     "@types/react-router-dom": "^4.3.4",
     "@types/yup": "^0.26.22"
   }
