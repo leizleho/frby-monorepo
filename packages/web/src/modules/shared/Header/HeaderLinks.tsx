@@ -113,7 +113,7 @@ function HeaderLinks({ ...props }) {
               <Settings className={classes.dropdownIcons} /> Settings
             </Link>,
 
-            <Link to="#!" className={classes.dropdownLink}>
+            <Link to="/logout" className={classes.dropdownLink}>
               <ExitToApp className={classes.dropdownIcons} />
               Logout
             </Link>
@@ -151,7 +151,7 @@ function HeaderLinks({ ...props }) {
   return (
     <List className={classes.list + ' ' + classes.mlAuto}>
       <ListItem className={classes.listItem}>
-        <Link to="/offers" className={classes.navLink}>
+        <Link to="/" className={classes.navLink}>
           <Redeem /> Offers
         </Link>
       </ListItem>
