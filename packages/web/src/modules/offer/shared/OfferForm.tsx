@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
 import { Form, Formik, FormikActions } from 'formik';
-import Button from '../../shared/CustomButtons/Button';
+import Button from '@material-ui/core/Button';
 
 import { Page1 } from './Page1';
 import { Page2 } from './Page2';
@@ -57,9 +56,8 @@ export class OfferForm extends React.PureComponent<Props, State> {
 
     return (
       <Formik<OfferFormValues> initialValues={initialValues} onSubmit={submit}>
-        {({ isSubmitting, values }) => (
+        {({ isSubmitting }) => (
           <Form style={{ display: 'flex' }}>
-            <Link to="/logout">logout</Link>
             <div style={{ width: 400, margin: 'auto' }}>
               {pages[this.state.page]}
               <div
@@ -70,12 +68,16 @@ export class OfferForm extends React.PureComponent<Props, State> {
               >
                 {this.state.page === pages.length - 1 ? (
                   <div>
-                    <Button size="sm" color="primary" onClick={submit}>
+                    <Button
+                      color="primary"
+                      type="submit"
+                      disabled={isSubmitting}
+                    >
                       create offer
                     </Button>
                   </div>
                 ) : (
-                  <Button size="sm" color="primary" onClick={this.nextPage}>
+                  <Button color="primary" onClick={this.nextPage}>
                     next page
                   </Button>
                 )}
