@@ -7,6 +7,7 @@ import { Logout } from '../modules/logout';
 import SearchOffersConnector from '../modules/offer/search';
 import { CreateOfferConnector } from '../modules/offer/create/CreateOfferConnector';
 import { ViewOfferConnector } from '../modules/offer/view/ViewOfferConnector';
+import { MessageConnector } from '../modules/offer/messages/MessageConnector';
 export const Routes = () => (
   <BrowserRouter>
     <Switch>
@@ -25,6 +26,7 @@ export const Routes = () => (
         path="/offers/create-offer"
         component={CreateOfferConnector}
       />
+      <Route path="/offer/:offerId/chat" component={MessageConnector} />
     </Switch>
   </BrowserRouter>
 );
