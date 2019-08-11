@@ -7,6 +7,8 @@ import HeaderLinks from '../../shared/Header/HeaderLinks';
 import GridContainer from '../../shared/Grid/GridContainer';
 import GridItem from '../../shared/Grid/GridItem';
 import Card from '../../shared/Card/Card';
+import CardHeader from '../../shared/Card/CardHeader';
+import CardBody from '../../shared/Card/CardBody';
 import withStyles from '@material-ui/core/styles/withStyles';
 import style from './style';
 import image from '../../../assets/img/bg7.jpg';
@@ -52,15 +54,41 @@ class C extends React.PureComponent<
                 <div className={classes.container}>
                   <GridContainer justify="center">
                     <GridItem xs={12} sm={8} md={8}>
-                      <Card>
-                        <div>{data.offer.title}</div>
-                        <div>{data.offer.description}</div>
-                        <div>
-                          <Link to={`/offer/${offerId}/chat`}>chat</Link>
-                        </div>
-                        <div>
-                          <Link to={`/offer/${offerId}/edit`}>edit</Link>
-                        </div>
+                      <Card blog>
+                        <CardHeader image>
+                          <a href="#pablo" onClick={e => e.preventDefault()}>
+                            {data.offer.pictureUrl && (
+                              <img src={data.offer.pictureUrl} alt="..." />
+                            )}
+                          </a>
+                          <div
+                            className={classes.coloredShadow}
+                            style={
+                              {
+                                backgroundImage: `url(${
+                                  data.offer.pictureUrl
+                                })`,
+                                opacity: '1'
+                              } as any
+                            }
+                          />
+                        </CardHeader>
+                        <CardBody>
+                          <h4 className={classes.cardTitle}>
+                            <a href="#pablo" onClick={e => e.preventDefault()}>
+                              {data.offer.title}
+                            </a>
+                          </h4>
+                          <p className={classes.cardDescription}>
+                            {data.offer.description}
+                          </p>
+                          <div>
+                            <Link to={`/offer/${offerId}/chat`}>chat</Link>
+                          </div>
+                          <div>
+                            <Link to={`/offer/${offerId}/edit`}>edit</Link>
+                          </div>
+                        </CardBody>
                       </Card>
                     </GridItem>
                   </GridContainer>
